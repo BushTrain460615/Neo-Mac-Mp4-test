@@ -27,7 +27,7 @@ import flixel.util.FlxTimer;
 #if windows
 import Discord.DiscordClient;
 #end
-#if windows
+#if desktop
 import Sys;
 import sys.FileSystem;
 #end

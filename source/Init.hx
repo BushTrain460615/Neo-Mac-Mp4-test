@@ -9,8 +9,6 @@ import flixel.text.FlxText;
 
 import lime.app.Application;
 
-import Discord.DiscordClient;
-
 import flixel.FlxSprite;
 
 using StringTools;
@@ -58,13 +56,6 @@ class Init extends FlxUIState
 			sys.FileSystem.createDirectory(Sys.getCwd() + "/assets/replays");
 
         FlxG.save.bind('save', 'neo');
-        
-        DiscordClient.initialize();
-
-		Application.current.onExit.add(function(exitCode) 
-		{
-			DiscordClient.shutdown();
-		});
 		
 		PlayerSettings.init();
 

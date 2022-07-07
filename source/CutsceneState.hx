@@ -21,8 +21,6 @@ class CutsceneState extends MusicBeatState
 	var _goodEnding:Bool = false;
 
 	var zoom:Float = -1;
-
-	var video:MP4Handler = new MP4Handler();
 	
 	public function new(goodEnding:Bool = true) 
 	{
@@ -47,8 +45,6 @@ class CutsceneState extends MusicBeatState
 			endIt();
 		else
 			FlxG.camera.fade(FlxColor.BLACK, 0.8, true);
-			if (PlayState.storyWeek == 5)
-				video.playMP4(Paths.video('CutsceneFinal'), new StoryMenuState());
 	}
 	
 	override public function update(elapsed:Float):Void 
