@@ -64,6 +64,7 @@ FNF: Neo V3 is a ambitious game modification based around the remixes by JellyFi
 	- `haxelib install newgrounds`
 	- `haxelib install linc_luajit`
 	- `haxelib git discord_rpc https://github.com/Aidan63/linc_discord-rpc`
+	- 'haxelib git hxCodec https://github.com/BushTrain460615/hxCodec'
 
 # Credits
 ### Friday Night Funkin'
