@@ -3440,6 +3440,30 @@ class PlayState extends MusicBeatState
 		}
 	}
 
+	function playCutscene(name:String, atEndOfSong:Bool = false)
+		{
+			inCutscene = true;
+			FlxG.sound.music.stop();
+		
+			var video:VideoHandler = new VideoHandler();
+			video.finishCallback = function()
+			{
+				if (atEndOfSong)
+				{
+					if (storyPlaylist.length <= 0)
+						FlxG.switchState(new StoryMenuState());
+					else
+					{
+						SONG = Song.loadFromJson(storyPlaylist[0].toLowerCase());
+						FlxG.switchState(new PlayState());
+					}
+				}
+				else
+					startCountdown();
+			}
+			video.playVideo(Paths.video(name));
+		}
+
 
 	function endReturn(){
 
@@ -3449,7 +3473,7 @@ class PlayState extends MusicBeatState
 			case "story":
 			if (SONG.song.toLowerCase() == 'hallucination')
 			{
-				LoadingState.loadAndSwitchState(new CutsceneState(), true);
+				playCutscene('CutsceneFinal.mp4', true);
 			}
 			else
 			{
