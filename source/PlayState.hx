@@ -1178,7 +1178,7 @@ class PlayState extends MusicBeatState
 		if (isStoryMode)
 		{
 			switch (curSong.toLowerCase())
-			{
+			{	
 				case "winter-horrorland":
 					var blackScreen:FlxSprite = new FlxSprite(0, 0).makeGraphic(Std.int(FlxG.width * 2), Std.int(FlxG.height * 2), FlxColor.BLACK);
 					add(blackScreen);
@@ -1220,6 +1220,8 @@ class PlayState extends MusicBeatState
 					schoolIntro(doof);
 				case 'thorns':
 					schoolIntro(doof);
+				case 'bopeebo':
+                    playCutscene('CutsceneFinal');
 			}
 		}
 		else
@@ -3473,7 +3475,7 @@ class PlayState extends MusicBeatState
 			case "story":
 			if (SONG.song.toLowerCase() == 'hallucination')
 			{
-				playCutscene('CutsceneFinal.mp4', true);
+				playCutscene('CutsceneFinal.mp4');
 			}
 			else
 			{
